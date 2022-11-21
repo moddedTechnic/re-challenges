@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Kingdom Construction</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet"
+	      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Kanit:wght@400;700&display=swap">
+	<link rel="stylesheet"
+	      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+	<link rel="stylesheet" href="/b.css">
+
+	<style>
+        * {
+            font-family: 'Kanit', sans-serif;
+        }
+
+        input, textarea {
+            font-family: 'Fragment Mono', monospace;
+            background-color: #f5f6fa00;
+
+            transition: background-color 250ms ease-in-out;
+        }
+
+        input, textarea, button {
+            border-radius: 1rem;
+        }
+
+        :is(input, textarea):is(:focus, :focus-within) {
+            background-color: #f5f6faff;
+        }
+
+        input {
+            padding-inline: 0.75rem;
+        }
+
+        textarea {
+            padding: 0.5rem 0.75rem;
+        }
+
+        button {
+            padding-block: 0.5rem;
+            color: #dcdde1;
+            background-color: #192a56;
+            transition: background-color 250ms ease-in-out;
+        }
+
+        button:disabled {
+            background-color: #2f3640;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+            font-size: inherit;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            padding-inline: 1rem;
+
+            font-weight: bold;
+
+            background: #192a56;
+            color: #dcdde1;
+        }
+
+        header > * {
+            height: 72px;
+        }
+
+        header .title {
+            display: flex;
+            align-items: center;
+            font-size: 3rem;
+        }
+
+        header .title span {
+            margin-right: 1rem;
+        }
+
+        header .subtitle {
+            display: grid;
+            place-content: end;
+            margin-left: 1rem;
+            padding-bottom: 0.75rem;
+
+            font-size: 1.5rem;
+        }
+
+        main {
+            flex-grow: 999;
+            padding-inline: 10vw;
+            background-color: #dcdde1;
+        }
+
+        #job-requests form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #job-requests form label:not(:first-child) {
+            margin-top: 0.5rem;
+        }
+
+        #job-requests form #description {
+            height: 10rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-block: 1rem;
+
+            color: #dcdde1;
+            background-color: #192a56;
+        }
+	</style>
+</head>
+<body>
+<header>
+	<p class="title">
+		<span class="material-symbols-outlined">engineering</span>
+		<span>Kingdom Construction</span>
+	</p>
+	<p class="subtitle">Building bridges since 1831</p>
+</header>
+<main>
+	<hgroup>
+		<h1>Victorian Engineering</h1>
+		<h2 class="subtitle">at its finest</h2>
+	</hgroup>
+
+	<p>
+		Here at Kingdom Construction, we believe in English construction from English designs.
+	</p>
+	<p>
+		We believe that the flag of this country should be planted firmly upon the mountain that is engineering.
+	</p>
+
+	<section id="job-requests">
+		<h2>Job Requests</h2>
+		<form>
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name">
+
+			<label for="description">Description</label>
+			<textarea name="description" id="description"></textarea>
+
+			<button type="submit" id="submit-job-request" disabled>Submit</button>
+		</form>
+		<ul id="job-request-list">
+			<li>
+				<h3>Marc Isambard Brunel</h3>
+				<p>
+					<i>My dearest Isambard,</i><br>
+					Having completed your apprenticeship, I deem it time for you to commence work.
+					I have thus secured for you a position as assistant engineer on the Thames Tunnelling Project.
+					You are to assist in constructing this tunnel between Rotherhithe and Wapping,
+					including supervising the minors during the excavation process.
+				</p>
+			</li>
+			<li>
+				<h3>The British War Office</h3>
+				<p>
+					<i>Dearest Sir,</i><br>
+					It has been drawn to our attention that our field hospitals in Crimea are not sufficient for their
+					purpose.
+					We hence require of you a temporary hospital to fulfill this deficiency.
+					Due to the nature of the situation in Crimea, we require these hospitals be prefabricated in this
+					United Kingdom and be shipped to Crimea for final assembly.
+				</p>
+			</li>
+		</ul>
+	</section>
+</main>
+<footer>
+	<p class="copyright">&copy; Jonathan Leeming 2022</p>
+</footer>
+
+<script>
+    let getMessage = function (jobDescInp) {
+        return jobDescInp.value
+    }
+</script>
+<script src="/a.js"></script>
+<script src="/c.js"></script>
+<script src="/d.js"></script>
+</body>
+</html>
